@@ -46,6 +46,9 @@ FROM vgsales_master_table;
 
 ## 📊 Data Visualization (Power BI)
 
+<img width="1662" height="916" alt="image" src="https://github.com/user-attachments/assets/19bc2e35-b63b-4bd9-82e7-210f02b322c5" />
+
+
 The dashboard includes:
 
 ### Global KPIs
