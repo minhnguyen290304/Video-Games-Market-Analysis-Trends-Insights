@@ -1,36 +1,96 @@
-# Video-Games-Market-Analysis-Trends-Insights
+# 🎮 Video Games Market Insights & Trends Analysis
 
+## 🎯 Project Overview
+This project provides an end-to-end analysis of the global video game industry from **1980 to 2020**.
 
-# Video Games Market Insights & Trends Analysis
+The main objective is to transform raw data into actionable insights by:
+- Cleaning and restructuring datasets  
+- Enabling multi-dimensional analysis  
+- Building an interactive dashboard to track:
+  - Regional sales performance  
+  - Platform lifecycle trends  
+  - Publisher performance  
 
-## 🎮 Project Overview
-This project provides a comprehensive analysis of the global video game industry from **1980 to 2020**. The primary objective was to clean raw data, restructure tables for multi-dimensional analysis, and build an interactive dashboard to track regional sales, platform lifecycles, and publisher performance.
+---
 
 ## 🚀 Key Accomplishments
-* **Data Engineering:** Processed **16,500+ records** in SQL Server, utilizing **Unpivot** techniques to optimize sales analysis across 4 global regions.
-* **Market Insights:** Identified trends across **570+ publishers**, analyzing the correlation between game volume and global total sales.
-* **BI Visualization:** Built an interactive **Power BI dashboard** to visualize 4 decades of gaming industry evolution through dynamic reports.
+- **Data Engineering:** Processed **16,500+ records** in SQL Server, applying **UNPIVOT (via UNION ALL)** to optimize sales analysis across 4 global regions  
+- **Market Analysis:** Analyzed **570+ publishers**, identifying correlations between game volume and global revenue  
+- **Dashboard Development:** Built an interactive **Power BI dashboard** visualizing 40 years of industry evolution  
+
+---
 
 ## 🛠️ Tech Stack
-* **Database:** Microsoft SQL Server (T-SQL)
-* **ETL/Data Engineering:** BULK INSERT, UNION ALL (Unpivot)
-* **Visualization:** Power BI Desktop
+- **Database:** Microsoft SQL Server (T-SQL)  
+- **ETL / Data Engineering:** BULK INSERT, Data Normalization, UNION ALL (Unpivot)  
+- **Visualization:** Power BI Desktop  
+
+---
 
 ## 📂 Data Pipeline
-### 1. Data Cleaning & Transformation (SQL)
-Raw CSV data was ingested into SQL Server via `BULK INSERT`. The data was then transformed from a wide format to a long format (Normalized) using the `UNION ALL` technique to enable flexible filtering in Power BI:
 
+### 1. Data Cleaning & Transformation (SQL)
+- Imported raw CSV data using `BULK INSERT`  
+- Transformed dataset from **wide format → normalized format** for flexible analysis  
+
+#### Example: UNPIVOT using UNION ALL
 ```sql
--- Full SQL script for data normalization
-SELECT game_name, platform, year_produced, genre, game_publisher, sales_na AS sales, 'North America' AS region
+SELECT game_name, platform, 'North America' AS region, sales_na AS sales
 FROM vgsales_master_table
+
 UNION ALL
-SELECT game_name, platform, year_produced, genre, game_publisher, sales_eu AS sales, 'EU' AS region
-FROM vgsales_master_table
-UNION ALL
-SELECT game_name, platform, year_produced, genre, game_publisher, sales_jp AS sales, 'Japan' AS region
-FROM vgsales_master_table
-UNION ALL
-SELECT game_name, platform, year_produced, genre, game_publisher, sales_other AS sales, 'Other' AS region
+
+SELECT game_name, platform, 'EU' AS region, sales_eu AS sales
 FROM vgsales_master_table;
-<img width="1659" height="933" alt="image" src="https://github.com/user-attachments/assets/c0aa385c-f176-42ca-8755-ebc65fdf367e" />
+```
+
+## 📊 Data Visualization (Power BI)
+
+The dashboard includes:
+
+### Global KPIs
+- **Total Sales:** 8.82 billion units  
+- **Total Games Released:** 11.4K  
+
+### Market Share
+- Treemap of **Top 10 Platforms**
+
+### Publisher Performance
+- Scatter plot: **Game volume vs Revenue**
+
+### Growth Trends
+- Area chart tracking **40 years of industry evolution**
+
+---
+
+## 📊 Key Insights
+- 🎮 **Platform Leaders:** PS2, PS3, and Nintendo DS generated the highest historical revenue  
+- 📈 **Genre Trends:** Action and Sports remained consistently popular across decades  
+- 🚀 **Market Peak:** The industry experienced rapid growth during **2005–2010**  
+
+---
+
+## 📁 Dataset Description
+
+The dataset includes:
+- Game Name  
+- Platform  
+- Genre  
+- Publisher  
+- Regional Sales (NA, EU, JP, Others)  
+- Global Sales  
+
+---
+
+## 💡 Future Improvements
+- Apply **machine learning models** for sales prediction  
+- Enhance **feature engineering** (e.g., platform lifecycle analysis)  
+- Automate ETL pipeline  
+- Integrate real-time or updated datasets  
+
+---
+
+## 📌 Project Highlights
+- End-to-end workflow: **ETL → Analysis → Visualization**  
+- Strong focus on **data modeling & normalization**  
+- Business-driven insights for **market trend analysis**  
