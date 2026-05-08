@@ -27,6 +27,18 @@ The main objective is to transform raw data into actionable insights by:
 
 ---
 
+## 📁 Dataset Description
+
+The dataset includes:
+- Game Name  
+- Platform  
+- Genre  
+- Publisher  
+- Regional Sales (NA, EU, JP, Others)  
+- Global Sales  
+
+---
+
 ## 📂 Data Pipeline
 
 ### 1. Data Cleaning & Transformation (SQL)
@@ -47,6 +59,7 @@ FROM vgsales_master_table;
 ## 📊 Data Visualization (Power BI)
 
 <img width="1662" height="916" alt="image" src="https://github.com/user-attachments/assets/19bc2e35-b63b-4bd9-82e7-210f02b322c5" />
+
 
 
 The dashboard includes:
@@ -70,18 +83,6 @@ The dashboard includes:
 - 🎮 **Platform Leaders:** PS2, PS3, and Nintendo DS generated the highest historical revenue  
 - 📈 **Genre Trends:** Action and Sports remained consistently popular across decades  
 - 🚀 **Market Peak:** The industry experienced rapid growth during **2005–2010**  
-
----
-
-## 📁 Dataset Description
-
-The dataset includes:
-- Game Name  
-- Platform  
-- Genre  
-- Publisher  
-- Regional Sales (NA, EU, JP, Others)  
-- Global Sales  
 
 ---
 
